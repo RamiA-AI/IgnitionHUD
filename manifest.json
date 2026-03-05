@@ -1,22 +1,26 @@
 {
-	"manifest_version": 2,
-	"version": "1.0",
-	"name": "Ignition HUD",
-	"description": "A simple HUD for the Ignition Casino in-browser client",
-	"icons": {
-		"16": "resources/logo_16.png",
-		"48": "resources/logo_48.png",
-		"128": "resources/logo_128.png"
-	},
-	"permissions": [
-		"activeTab",
-		"*://*.ignitioncasino.eu/static/poker-game/*"
-	],
-	"content_scripts": [
-		{
-			"matches": ["*://*.ignitioncasino.eu/static/poker-game/*"],
-			"run_at": "document_idle",
-			"js": ["hud.js"]
-		}
-	]
+  "manifest_version": 3,
+  "version": "1.0",
+  "name": "Ignition HUD",
+  "description": "A simple HUD for the Ignition Casino in-browser client",
+
+  "icons": {
+    "16": "resources/logo_16.png",
+    "48": "resources/logo_48.png",
+    "128": "resources/logo_128.png"
+  },
+
+  "permissions": ["activeTab"],
+
+  "host_permissions": [
+    "*://*.ignitioncasino.eu/static/poker-game/*"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.ignitioncasino.eu/static/poker-game/*"],
+      "run_at": "document_idle",
+      "js": ["hud.js"]
+    }
+  ]
 }
